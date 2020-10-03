@@ -3,6 +3,7 @@ import base from './configs/base.json';
 import recommended from './configs/recommended.json';
 import processInlineTemplates from './configs/process-inline-templates.json';
 import processors from './processors';
+import altText, { RULE_NAME as altTextRuleName } from './rules/alt-text';
 import bananaInBox, {
   RULE_NAME as bananaInBoxRuleName,
 } from './rules/banana-in-box';
@@ -28,6 +29,7 @@ export default {
   },
   processors,
   rules: {
+    [altTextRuleName]: altText,
     [bananaInBoxRuleName]: bananaInBox,
     [cyclomaticComplexityRuleName]: cyclomaticComplexity,
     [noCallExpressionRule]: noCallExpression,
